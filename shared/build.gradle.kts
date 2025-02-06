@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlinxSerialization)
 }
 
 kotlin {
@@ -38,11 +39,10 @@ kotlin {
     
     sourceSets {
         androidMain.dependencies {
-
+            implementation(libs.ktor.client.okhttp)
         }
-
         iosMain.dependencies {
-
+            implementation(libs.ktor.client.darwin)
         }
 
         commonMain.dependencies {
@@ -52,6 +52,10 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization.kotlinx.json)
 
             implementation(libs.koin.core)
             implementation(libs.koin.compose.viewmodel)
