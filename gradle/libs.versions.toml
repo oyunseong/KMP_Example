@@ -10,7 +10,11 @@ compose-multiplatform = "1.7.0"
 koin = "4.0.2"
 ktor = "3.0.0"
 
+# https://klibs.io/project/TM-Apps/konnection
+konnection = "1.4.3"
+
 [libraries]
+konnection = { module = "dev.tmapps:konnection", version.ref = "konnection" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
